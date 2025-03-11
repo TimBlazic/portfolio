@@ -1,0 +1,293 @@
+[
+  {
+    "id": 1,
+    "title": "NarediMaturo",
+    "description": "NarediMaturo is a web application that helps high school students prepare for their final exams. Digitized past exam papers, interactive exercises, and personalized study plans help students achieve better results.",
+    "private": false,
+    "isLive": true,
+    "liveLink": "https://www.naredimaturo.com",
+    "isGithub": false,
+    "githubLink": "https://github.com/naredimaturo",
+    "images": [
+      "naredimaturo/naredimaturo_image1.png",
+      "naredimaturo/naredimaturo_image2.png",
+      "naredimaturo/naredimaturo_image3.png",
+      "naredimaturo/naredimaturo_image4.png"
+    ],
+    "tags": ["Interactive exercises", "Progress tracking", "AI", "Education"],
+    "stats": {
+      "stat1": {
+        "value": "1,000+",
+        "description": "Users"
+      },
+      "stat2": {
+        "value": "10,000+",
+        "description": "Questions"
+      },
+      "stat3": {
+        "value": "12",
+        "description": "Subjects"
+      }
+    },
+    "longDescription": [
+      "NarediMaturo is a comprehensive platform for final exam preparation, combining digitized past exam papers, interactive exercises, and personalized study plans.",
+      "The application enables students to effectively prepare for their exams using the latest digital tools and learning approaches.",
+      "The platform also offers progress tracking, performance analytics, and AI-powered recommendations for improving results.",
+      "With Stripe payment integration, we provide access to premium content while keeping basic features free for all users."
+    ],
+    "technologies": [
+      {
+        "name": "Next.js",
+        "description": "React framework"
+      },
+      {
+        "name": "Tailwind CSS",
+        "description": "Utility-first CSS"
+      },
+      {
+        "name": "TypeScript",
+        "description": "Typed JavaScript"
+      },
+      {
+        "name": "Stripe",
+        "description": "Payment processing"
+      },
+      {
+        "name": "Prisma",
+        "description": "ORM"
+      },
+      {
+        "name": "OpenAI",
+        "description": "AI"
+      },
+      {
+        "name": "Vercel",
+        "description": "Deployment"
+      },
+      {
+        "name": "Supabase",
+        "description": "Database"
+      },
+      {
+        "name": "React",
+        "description": "UI Library"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Connected Load Carrier",
+    "description": "Connected Load Carrier is a web application that enhances digital supply chains by providing real-time asset tracking, advanced data analysis, and operational efficiency for businesses.",
+    "private": true,
+    "isLive": true,
+    "liveLink": "https://connected-load-carrier.com/",
+    "isGithub": false,
+    "githubLink": "",
+    "images": [
+      "clc/clc_image1.png",
+      "clc/clc_image2.png",
+      "clc/clc_image3.png",
+      "clc/clc_image4.png"
+    ],
+    "tags": [
+      "Real-time asset tracking",
+      "Data analysis",
+      "Operational efficiency",
+      "Sustainability"
+    ],
+    "stats": {
+      "stat1": {
+        "value": "500+",
+        "description": "Clients"
+      },
+      "stat2": {
+        "value": "1,000,000+",
+        "description": "Assets Tracked"
+      },
+      "stat3": {
+        "value": "99.9%",
+        "description": "Uptime"
+      }
+    },
+    "longDescription": [
+      "Connected Load Carrier is a comprehensive platform designed to revolutionize supply chain management by offering real-time asset tracking, advanced data analysis, and enhanced operational efficiency.",
+      "The application enables businesses to monitor their assets accurately, reduce losses, and optimize logistics processes.",
+      "The platform also offers sustainability through a circular economy, contributing to environmental responsibility.",
+      "With a focus on reliability and innovation, Connected Load Carrier provides solutions that adapt to the evolving landscape of connected logistics."
+    ],
+    "technologies": [
+      {
+        "name": "Next.js",
+        "description": "React framework for server-side rendering and static site generation"
+      },
+      {
+        "name": "React",
+        "description": "JavaScript library for building user interfaces"
+      },
+      {
+        "name": "TypeScript",
+        "description": "Strongly typed JavaScript for better code maintainability"
+      },
+      {
+        "name": "Tailwind CSS",
+        "description": "Utility-first CSS framework for responsive and modern UI design"
+      },
+      {
+        "name": "Custom Database",
+        "description": "Optimized data storage and retrieval for asset tracking"
+      },
+      {
+        "name": "Vercel",
+        "description": "Deployment and hosting for fast and scalable applications"
+      },
+      {
+        "name": "REST API",
+        "description": "Backend API for seamless communication between services"
+      },
+      {
+        "name": "Node.js",
+        "description": "JavaScript runtime for handling backend operations"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "ŠUŠU Bubble Tea & Kofi",
+    "description": "ŠUŠU is a modern bubble tea and coffee shop, offering a variety of high-quality bubble tea flavors, coffee, and desserts like cake pops and mochi. Located in Ljubljana, it focuses on delivering a unique beverage experience.",
+    "private": true,
+    "isLive": true,
+    "liveLink": "https://www.instagram.com/bubbletea.susu/",
+    "isGithub": false,
+    "githubLink": "",
+    "images": [
+      "susu/susu_image1.png",
+      "susu/susu_image2.png",
+      "susu/susu_image3.png",
+      "susu/susu_image4.png"
+    ],
+    "tags": ["Bubble Tea", "Coffee", "Desserts", "Mochi", "Cake Pops"],
+    "stats": {
+      "stat1": {
+        "value": "2",
+        "description": "Locations in Ljubljana"
+      },
+      "stat2": {
+        "value": "10+",
+        "description": "Bubble tea flavors"
+      },
+      "stat3": {
+        "value": "1000+",
+        "description": "Happy customers per month"
+      }
+    },
+    "longDescription": [
+      "ŠUŠU Bubble Tea & Kofi is a trendy café in Ljubljana that specializes in bubble tea, coffee, and unique desserts. The shop is known for its high-quality ingredients and customizable drinks.",
+      "The brand offers a diverse range of bubble tea flavors, from classic milk teas to fruit-based options, ensuring there's something for everyone.",
+      "Apart from beverages, ŠUŠU serves delicious cake pops and traditional mochi, making it a go-to spot for sweet lovers.",
+      "With an active presence on social media, ŠUŠU keeps its customers engaged through promotions, new flavors, and seasonal specials."
+    ],
+    "technologies": [
+      {
+        "name": "Next.js",
+        "description": "React framework for server-side rendering and static site generation"
+      },
+      {
+        "name": "React",
+        "description": "JavaScript library for building user interfaces"
+      },
+      {
+        "name": "TypeScript",
+        "description": "Strongly typed JavaScript for better code maintainability"
+      },
+      {
+        "name": "Tailwind CSS",
+        "description": "Utility-first CSS framework for responsive and modern UI design"
+      },
+      {
+        "name": "Supabase",
+        "description": "Database"
+      },
+      {
+        "name": "Vercel",
+        "description": "Deployment and hosting for fast and scalable applications"
+      },
+      {
+        "name": "REST API",
+        "description": "Backend API for seamless communication between services"
+      },
+      {
+        "name": "Node.js",
+        "description": "JavaScript runtime for handling backend operations"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Shovels AI",
+    "description": "Shovels.ai is a platform that provides access to comprehensive building permit and contractor data, enabling businesses to identify qualified contractors, understand their work history, and connect with decision-makers.",
+    "private": true,
+    "isLive": true,
+    "liveLink": "https://www.app.shovels.ai",
+    "isGithub": false,
+    "githubLink": "",
+    "images": [
+      "shovels/shovels_image1.png",
+      "shovels/shovels_image2.png",
+      "shovels/shovels_image3.png",
+      "shovels/shovels_image4.png",
+      "shovels/shovels_image5.png",
+      "shovels/shovels_image6.png"
+    ],
+    "tags": [
+      "Building Permit Data",
+      "Contractor Intelligence",
+      "API Access",
+      "Data Analytics"
+    ],
+    "stats": {
+      "stat1": {
+        "value": "160M+",
+        "description": "Building permits in database"
+      },
+      "stat2": {
+        "value": "3M+",
+        "description": "Contractors in database"
+      },
+      "stat3": {
+        "value": "30M+",
+        "description": "US addresses covered"
+      }
+    },
+    "longDescription": [
+      "Shovels.ai is a comprehensive platform designed to make building permit data easy to understand and use for market research, go-to-market strategies, and sales. The platform offers clean and useful building permit data that's easy to understand, eliminating the need for extensive data engineering.",
+      "The platform offers multiple interfaces to interact with building permit and contractor data, including a web application, API access, and direct database integrations with platforms like Snowflake, BigQuery, or Databricks.",
+      "Shovels.ai serves various industries, including construction technology, energy and climate, building material suppliers, and real estate, providing tailored solutions to meet specific industry needs."
+    ],
+    "technologies": [
+      {
+        "name": "React",
+        "description": "JavaScript library for building user interfaces"
+      },
+      {
+        "name": "Node.js",
+        "description": "JavaScript runtime for building scalable network applications"
+      },
+      {
+        "name": "Python",
+        "description": "Programming language used for data processing and analysis"
+      },
+      {
+        "name": "PostgreSQL",
+        "description": "Relational database management system"
+      },
+      {
+        "name": "AWS",
+        "description": "Cloud computing services for hosting and infrastructure"
+      },
+      {
+        "name": "Docker",
+        "description": "Platform for developing, shipping, and running applications in containers"
+      }
+    ]
+  }
+]
