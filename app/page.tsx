@@ -180,11 +180,11 @@ export default function Page() {
         >
           <div className="mx-auto max-w-3xl px-4 md:px-6 text-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-6">
-              Let's Work Together
+              Let&apos;s Work Together
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Looking for a developer to bring your ideas to life? I'm always
-              interested in exciting projects and new opportunities.
+              Looking for a developer to bring your ideas to life? I&apos;m
+              always interested in exciting projects and new opportunities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="w-full sm:w-auto">

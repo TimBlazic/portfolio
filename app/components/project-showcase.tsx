@@ -15,7 +15,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-// @ts-ignore
 import projectsData from "@/app/data/projects.json" assert { type: "json" };
 
 interface ProjectShowcaseProps {
@@ -23,11 +22,11 @@ interface ProjectShowcaseProps {
 }
 
 export default function ProjectShowcase({ projectId }: ProjectShowcaseProps) {
-  const project = projectsData.find((p) => p.id.toString() === projectId);
-  if (!project) return null;
-
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const project = projectsData.find((p) => p.id.toString() === projectId);
+  if (!project) return null;
 
   const nextImage = () => {
     setCurrentImageIndex((prev) =>
