@@ -6,12 +6,47 @@ import Link from "next/link";
 import ProjectCard from "./components/project-card";
 import TechStack from "./components/tech-stack";
 import projects from "./data/projects.json";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Cookies from "js-cookie";
 
-export default function Page() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+function ProjectsSection({
+  showPrivateProjects,
+}: {
+  showPrivateProjects: boolean;
+}) {
+  const filteredProjects = projects.filter(
+    (project) => showPrivateProjects || !project.private
+  );
+
+  return (
+    <section id="projects" className="py-12 md:py-24 lg:py-32">
+      <div className="mx-auto max-w-6xl px-4 md:px-6">
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center animate-fade-in">
+          Projects
+        </h2>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {filteredProjects.map((project, index) => (
+            <div
+              key={project.id}
+              className={`animate-slide-up [animation-delay:${index * 200}ms]`}
+            >
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                image={project.images[0]}
+                tags={project.tags}
+                link={`/projects/${project.id}`}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ProjectsWrapper() {
   const [showPrivateProjects, setShowPrivateProjects] = useState(false);
   const searchParams = useSearchParams();
 
@@ -24,14 +59,16 @@ export default function Page() {
     } else if (accessCode) {
       if (accessCode === process.env.NEXT_PUBLIC_PRIVATE_ACCESS_CODE) {
         setShowPrivateProjects(true);
-        Cookies.set("privateProjectsAccess", "true", { expires: 7 }); // Cookie expires in 7 days
+        Cookies.set("privateProjectsAccess", "true", { expires: 7 });
       }
     }
   }, [searchParams]);
 
-  const filteredProjects = projects.filter(
-    (project) => showPrivateProjects || !project.private
-  );
+  return <ProjectsSection showPrivateProjects={showPrivateProjects} />;
+}
+
+export default function Page() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-background">
@@ -139,31 +176,9 @@ export default function Page() {
           </div>
         </section>
 
-        <section id="projects" className="py-12 md:py-24 lg:py-32">
-          <div className="mx-auto max-w-6xl px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center animate-fade-in">
-              Projects
-            </h2>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {filteredProjects.map((project, index) => (
-                <div
-                  key={project.id}
-                  className={`animate-slide-up [animation-delay:${
-                    index * 200
-                  }ms]`}
-                >
-                  <ProjectCard
-                    title={project.title}
-                    description={project.description}
-                    image={project.images[0]}
-                    tags={project.tags}
-                    link={`/projects/${project.id}`}
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <Suspense fallback={<div>Loading projects...</div>}>
+          <ProjectsWrapper />
+        </Suspense>
 
         <section className="py-12 md:py-24 lg:py-32">
           <div className="mx-auto max-w-6xl px-4 md:px-6">
