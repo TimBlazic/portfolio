@@ -44,6 +44,7 @@ export default function ProjectShowcase({ projectId }: ProjectShowcaseProps) {
     <>
       <div className="container px-4 py-12">
         {/* Back Button */}
+
         <div className="sticky top-0 z-50 w-min rounded-lg mb-8 bg-background/30 content-start flex backdrop-blur-sm supports-[backdrop-filter]:bg-background/20 animate-fade-in-up">
           <Button
             variant="ghost"
