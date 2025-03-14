@@ -4,14 +4,13 @@ import { notFound } from "next/navigation";
 import ProjectShowcase from "@/app/components/project-showcase";
 import projectsData from "@/app/data/projects.json";
 
-interface PageProps {
-  params: {
-    id: string;
-  };
-}
+type PageProps = {
+  params: Promise<{ id: string }>;
+};
 
-export default function ProjectPage({ params }: PageProps) {
-  const project = projectsData.find((p) => p.id.toString() === params.id);
+export default async function ProjectPage({ params }: PageProps) {
+  const { id } = await params;
+  const project = projectsData.find((p) => p.id.toString() === id);
 
   if (!project || project.private) {
     notFound();
@@ -19,7 +18,7 @@ export default function ProjectPage({ params }: PageProps) {
 
   return (
     <div className="min-h-screen w-full relative flex justify-center">
-      <ProjectShowcase projectId={params.id} />
+      <ProjectShowcase projectId={id} />
     </div>
   );
 }
