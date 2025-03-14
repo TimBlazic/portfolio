@@ -1,6 +1,73 @@
 [
   {
     "id": 1,
+    "title": "DM Metal",
+    "description": "DM Metal is a metal fabrication company's website offering metal processing services, metal structures, and metal fences. The site is optimized for mobile devices and provides an easy way to contact the company.",
+    "private": false,
+    "isLive": true,
+    "liveLink": "https://dm-metal.vercel.app",
+    "isGithub": false,
+    "githubLink": "",
+    "images": [
+      "dm-metal/dmmetal-image1.png",
+      "dm-metal/dmmetal-image2.png",
+      "dm-metal/dmmetal-image3.png",
+      "dm-metal/dmmetal-image4.png",
+      "dm-metal/dmmetal-image5.png",
+      "dm-metal/dmmetal-image6.png",
+      "dm-metal/dmmetal-image7.png"
+    ],
+    "tags": [
+      "Metal Structures",
+      "Metal Fences",
+      "Metal Processing",
+      "Responsive Design"
+    ],
+    "stats": {
+      "stat1": {
+        "value": "10+",
+        "description": "Years of Experience"
+      },
+      "stat2": {
+        "value": "100+",
+        "description": "Completed Projects"
+      },
+      "stat3": {
+        "value": "24/7",
+        "description": "Support"
+      }
+    },
+    "longDescription": [
+      "DM Metal is a specialized company for metal structures and metal processing, offering its services for over 10 years.",
+      "The website was designed to provide potential clients with an easy overview of services and quick communication with the company.",
+      "Special attention was given to mobile optimization, as most clients search for services through mobile devices.",
+      "The site includes a project gallery, contact information, and an inquiry form that enables quick communication with clients."
+    ],
+    "technologies": [
+      {
+        "name": "Next.js",
+        "description": "React framework"
+      },
+      {
+        "name": "Tailwind CSS",
+        "description": "Utility-first CSS"
+      },
+      {
+        "name": "TypeScript",
+        "description": "Typed JavaScript"
+      },
+      {
+        "name": "Vercel",
+        "description": "Deployment"
+      },
+      {
+        "name": "React",
+        "description": "UI Library"
+      }
+    ]
+  },
+  {
+    "id": 2,
     "title": "NarediMaturo",
     "description": "NarediMaturo is a web application that helps high school students prepare for their final exams. Digitized past exam papers, interactive exercises, and personalized study plans help students achieve better results.",
     "private": false,
@@ -75,7 +142,7 @@
     ]
   },
   {
-    "id": 2,
+    "id": 3,
     "title": "Connected Load Carrier",
     "description": "Connected Load Carrier is a web application that enhances digital supply chains by providing real-time asset tracking, advanced data analysis, and operational efficiency for businesses.",
     "private": true,
@@ -151,7 +218,7 @@
     ]
   },
   {
-    "id": 3,
+    "id": 4,
     "title": "ŠUŠU Bubble Tea & Kofi",
     "description": "ŠUŠU is a modern bubble tea and coffee shop, offering a variety of high-quality bubble tea flavors, coffee, and desserts like cake pops and mochi. Located in Ljubljana, it focuses on delivering a unique beverage experience.",
     "private": true,
@@ -222,7 +289,7 @@
     ]
   },
   {
-    "id": 4,
+    "id": 5,
     "title": "Shovels AI",
     "description": "Shovels.ai is a platform that provides access to comprehensive building permit and contractor data, enabling businesses to identify qualified contractors, understand their work history, and connect with decision-makers.",
     "private": true,

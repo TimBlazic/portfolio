@@ -2,26 +2,18 @@
 
 import { notFound } from "next/navigation";
 import ProjectShowcase from "@/app/components/project-showcase";
-import projects from "@/app/data/projects.json";
-import { use } from "react";
+import projectsData from "@/app/data/projects.json";
 
-interface Props {
-  params: Promise<{
-    id: string;
-  }>;
-}
+export default function ProjectPage({ params }: { params: { id: string } }) {
+  const project = projectsData.find((p) => p.id.toString() === params.id);
 
-export default function ProjectPage({ params }: Props) {
-  const { id } = use(params);
-  const project = projects.find((p) => p.id.toString() === id);
-
-  if (!project) {
+  if (!project || project.private) {
     notFound();
   }
 
   return (
     <div className="min-h-screen w-full relative flex justify-center">
-      <ProjectShowcase projectId={id} />
+      <ProjectShowcase projectId={params.id} />
     </div>
   );
 }

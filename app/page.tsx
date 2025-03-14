@@ -6,18 +6,11 @@ import Link from "next/link";
 import ProjectCard from "./components/project-card";
 import TechStack from "./components/tech-stack";
 import projects from "./data/projects.json";
-import { useState, useEffect, Suspense } from "react";
-import { useSearchParams } from "next/navigation";
-import Cookies from "js-cookie";
+import { useState } from "react";
 
-function ProjectsSection({
-  showPrivateProjects,
-}: {
-  showPrivateProjects: boolean;
-}) {
-  const filteredProjects = projects.filter(
-    (project) => showPrivateProjects || !project.private
-  );
+function ProjectsSection() {
+  // Filtriraj samo javne projekte
+  const publicProjects = projects.filter((project) => !project.private);
 
   return (
     <section id="projects" className="py-12 md:py-24 lg:py-32">
@@ -26,7 +19,7 @@ function ProjectsSection({
           Projects
         </h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {filteredProjects.map((project, index) => (
+          {publicProjects.map((project, index) => (
             <div
               key={project.id}
               className={`animate-slide-up [animation-delay:${index * 200}ms]`}
@@ -44,27 +37,6 @@ function ProjectsSection({
       </div>
     </section>
   );
-}
-
-function ProjectsWrapper() {
-  const [showPrivateProjects, setShowPrivateProjects] = useState(false);
-  const searchParams = useSearchParams();
-
-  useEffect(() => {
-    const accessCode = searchParams.get("code");
-    const hasPrivateAccess = Cookies.get("privateProjectsAccess");
-
-    if (hasPrivateAccess === "true") {
-      setShowPrivateProjects(true);
-    } else if (accessCode) {
-      if (accessCode === process.env.NEXT_PUBLIC_PRIVATE_ACCESS_CODE) {
-        setShowPrivateProjects(true);
-        Cookies.set("privateProjectsAccess", "true", { expires: 7 });
-      }
-    }
-  }, [searchParams]);
-
-  return <ProjectsSection showPrivateProjects={showPrivateProjects} />;
 }
 
 export default function Page() {
@@ -176,9 +148,7 @@ export default function Page() {
           </div>
         </section>
 
-        <Suspense fallback={<div>Loading projects...</div>}>
-          <ProjectsWrapper />
-        </Suspense>
+        <ProjectsSection />
 
         <section className="py-12 md:py-24 lg:py-32">
           <div className="mx-auto max-w-6xl px-4 md:px-6">
