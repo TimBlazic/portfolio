@@ -1,23 +1,19 @@
 "use client";
 
-import { notFound } from "next/navigation";
 import ProjectShowcase from "@/app/components/project-showcase";
-import projectsData from "@/app/data/projects.json";
+import { use } from "react";
 
-type PageProps = {
-  params: Promise<{ id: string }>;
-};
+interface PageProps {
+  params: Promise<{
+    id: string;
+  }>;
+}
 
-export default async function ProjectPage({ params }: PageProps) {
-  const { id } = await params;
-  const project = projectsData.find((p) => p.id.toString() === id);
-
-  if (!project || project.private) {
-    notFound();
-  }
+export default function ProjectPage({ params }: PageProps) {
+  const { id } = use(params);
 
   return (
-    <div className="min-h-screen w-full relative flex justify-center">
+    <div className="min-h-screen w-full">
       <ProjectShowcase projectId={id} />
     </div>
   );

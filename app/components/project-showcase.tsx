@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 import {
   ChevronLeft,
   ChevronRight,
@@ -15,7 +16,27 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import projectsData from "@/app/data/projects.json" assert { type: "json" };
+import projectsData from "@/app/data/projects.json";
+
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  private: boolean;
+  isLive: boolean;
+  liveLink: string;
+  isGithub: boolean;
+  githubLink: string;
+  images: string[];
+  tags: string[];
+  stats: {
+    stat1: { value: string; description: string };
+    stat2: { value: string; description: string };
+    stat3: { value: string; description: string };
+  };
+  longDescription: string[];
+  technologies: Array<{ name: string; description: string }>;
+}
 
 interface ProjectShowcaseProps {
   projectId: string;
@@ -25,8 +46,15 @@ export default function ProjectShowcase({ projectId }: ProjectShowcaseProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const project = projectsData.find((p) => p.id.toString() === projectId);
-  if (!project) return null;
+  const project = projectsData.find(
+    (p: Project) => p.id.toString() === projectId
+  );
+
+  console.log(project);
+
+  if (!project) {
+    return notFound();
+  }
 
   const nextImage = () => {
     setCurrentImageIndex((prev) =>
@@ -60,7 +88,7 @@ export default function ProjectShowcase({ projectId }: ProjectShowcaseProps) {
 
         <div className="grid gap-12 md:grid-cols-2 relative">
           {/* Image Gallery */}
-          <div className="relative rounded-2xl overflow-hidden bg-background/20 backdrop-blur-sm aspect-video shadow-lg hover:shadow-xl transition-all duration-500 border border-white/5 opacity-0 animate-fade-in-up [animation-delay:200ms]">
+          <div className="relative rounded-2xl overflow-hidden bg-background/20 backdrop-blur-sm aspect-video shadow-lg hover:shadow-xl transition-all duration-500 border border-white/5 animate-fade-in-up [animation-delay:200ms]">
             <div
               className="relative h-full w-full cursor-pointer"
               onClick={() => setIsModalOpen(true)}
@@ -74,6 +102,10 @@ export default function ProjectShowcase({ projectId }: ProjectShowcaseProps) {
                 alt={`${project.title} screenshot ${currentImageIndex + 1}`}
                 fill
                 className="object-contain"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = "/placeholder.svg";
+                }}
               />
 
               {/* Image Navigation */}
@@ -110,7 +142,7 @@ export default function ProjectShowcase({ projectId }: ProjectShowcaseProps) {
           </div>
 
           {/* Project Details */}
-          <div className="flex flex-col opacity-0 animate-fade-in-up [animation-delay:400ms]">
+          <div className="flex flex-col animate-fade-in-up [animation-delay:400ms]">
             <div className="space-y-6">
               <div className="space-y-2">
                 <div className="flex items-center gap-3">
@@ -218,7 +250,7 @@ export default function ProjectShowcase({ projectId }: ProjectShowcaseProps) {
         {/* Additional Project Information */}
         <div className="mt-16 space-y-12 relative">
           {/* About Project */}
-          <div className="bg-background/10 backdrop-blur-[2px] rounded-2xl p-8 border border-white/5 transition-all duration-500 opacity-0 animate-fade-in-up [animation-delay:600ms] group hover:bg-background/20">
+          <div className="bg-background/10 backdrop-blur-[2px] rounded-2xl p-8 border border-white/5 transition-all duration-500 animate-fade-in-up [animation-delay:600ms] group hover:bg-background/20">
             <div className="flex items-center gap-2 mb-6">
               <div className="h-px w-6 bg-gradient-to-r from-primary/20 to-accent/20 group-hover:w-8 transition-all duration-500" />
               <h2 className="text-xl font-medium text-foreground/80">
@@ -238,7 +270,7 @@ export default function ProjectShowcase({ projectId }: ProjectShowcaseProps) {
           </div>
 
           {/* Technologies Used */}
-          <div className="bg-background/10 backdrop-blur-[2px] rounded-2xl p-8 border border-white/5 transition-all duration-500 opacity-0 animate-fade-in-up [animation-delay:800ms] group hover:bg-background/20">
+          <div className="bg-background/10 backdrop-blur-[2px] rounded-2xl p-8 border border-white/5 transition-all duration-500 animate-fade-in-up [animation-delay:800ms] group hover:bg-background/20">
             <div className="flex items-center gap-2 mb-6">
               <div className="h-px w-6 bg-gradient-to-r from-primary/20 to-accent/20 group-hover:w-8 transition-all duration-500" />
               <h2 className="text-xl font-medium text-foreground/80">

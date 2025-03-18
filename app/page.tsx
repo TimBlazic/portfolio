@@ -1,169 +1,208 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, Twitter, Menu } from "lucide-react";
+import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 import Link from "next/link";
 import ProjectCard from "./components/project-card";
 import TechStack from "./components/tech-stack";
+import ProjectComparison from "./components/project-comparison";
+import ResultsMetrics from "./components/results-metrics";
 import projects from "./data/projects.json";
-import { useState } from "react";
 
-function ProjectsSection() {
+export default function Page() {
   // Filtriraj samo javne projekte
   const publicProjects = projects.filter((project) => !project.private);
 
   return (
-    <section id="projects" className="py-12 md:py-24 lg:py-32">
-      <div className="mx-auto max-w-6xl px-4 md:px-6">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center animate-fade-in">
-          Projects
-        </h2>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {publicProjects.map((project, index) => (
-            <div
-              key={project.id}
-              className={`animate-slide-up [animation-delay:${index * 200}ms]`}
-            >
-              <ProjectCard
-                title={project.title}
-                description={project.description}
-                image={project.images[0]}
-                tags={project.tags}
-                link={`/projects/${project.id}`}
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-export default function Page() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  return (
     <div className="min-h-screen bg-background">
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto max-w-7xl flex h-14 items-center justify-between px-4 md:px-6">
-          <div className="flex items-center justify-between w-full md:w-auto">
-            <Link className="flex items-center space-x-2" href="/">
-              <span className="font-bold">TimBlazic.dev</span>
+        <div className="container mx-auto max-w-7xl flex h-14 items-center px-4">
+          <div className="mr-4 hidden md:flex">
+            <Link className="mr-6 flex items-center space-x-2" href="/">
+              <span className="hidden font-bold sm:inline-block">
+                TimBlazic.dev
+              </span>
             </Link>
-            <button
-              className="md:hidden"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              <Menu className="h-6 w-6" />
-            </button>
-          </div>
-
-          <div
-            className={`${
-              isMenuOpen ? "flex opacity-100" : "hidden opacity-0"
-            } md:flex md:opacity-100 absolute md:relative top-14 md:top-0 left-0 right-0 flex-col md:flex-row items-center bg-white md:bg-transparent shadow-lg md:shadow-none border-b md:border-0 py-8 md:py-0 space-y-6 md:space-y-0 md:space-x-6 transition-all duration-200`}
-          >
-            <nav className="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-6 text-base font-medium w-full md:w-auto">
+            <nav className="flex items-center space-x-6 text-sm font-medium">
               <Link
                 href="#about"
-                className="transition-colors hover:text-foreground/80 w-full text-center py-2 px-4 hover:bg-gray-50 md:hover:bg-transparent"
-                onClick={() => setIsMenuOpen(false)}
+                className="transition-colors hover:text-foreground/80"
               >
                 About
               </Link>
               <Link
                 href="#projects"
-                className="transition-colors hover:text-foreground/80 w-full text-center py-2 px-4 hover:bg-gray-50 md:hover:bg-transparent"
-                onClick={() => setIsMenuOpen(false)}
+                className="transition-colors hover:text-foreground/80"
               >
                 Projects
               </Link>
               <Link
                 href="#contact"
-                className="transition-colors hover:text-foreground/80 w-full text-center py-2 px-4 hover:bg-gray-50 md:hover:bg-transparent"
-                onClick={() => setIsMenuOpen(false)}
+                className="transition-colors hover:text-foreground/80"
               >
                 Contact
               </Link>
             </nav>
-            <Button asChild className="md:hidden w-[200px]">
-              <Link href="mailto:timblazic.dev@gmail.com" className="text-base">
-                Get in Touch
-              </Link>
-            </Button>
           </div>
-
-          <Button asChild className="hidden md:flex">
-            <Link href="mailto:timblazic.dev@gmail.com">Get in Touch</Link>
+          <Button className="ml-auto" asChild>
+            <Link href="#contact">Get in Touch</Link>
           </Button>
         </div>
       </header>
 
-      <main className="container mx-auto max-w-7xl px-4 md:px-6">
+      <main className="container mx-auto max-w-7xl px-4">
         <section id="about" className="py-12 md:py-24 lg:py-32">
-          <div className="mx-auto max-w-4xl px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2 animate-fade-in">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none animate-slide-up">
-                  Full Stack Developer
-                </h1>
-                <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400 animate-slide-up [animation-delay:200ms]">
-                  Building digital experiences with modern technologies. Focused
-                  on creating elegant solutions to complex problems.
-                </p>
-              </div>
-              <div className="space-x-4 animate-slide-up [animation-delay:400ms]">
-                <Link
-                  href="https://github.com/TimBlazic?tab=overview"
-                  target="_blank"
-                >
-                  <Button variant="outline" size="icon">
-                    <Github className="h-4 w-4" />
-                    <span className="sr-only">GitHub</span>
-                  </Button>
-                </Link>
-                <Link
-                  href="https://www.linkedin.com/in/tim-bla%C5%BEi%C4%8D-9b6b97257/"
-                  target="_blank"
-                >
-                  <Button variant="outline" size="icon">
-                    <Linkedin className="h-4 w-4" />
-                    <span className="sr-only">LinkedIn</span>
-                  </Button>
-                </Link>
-                <Link href="https://x.com/timblazic_dev" target="_blank">
-                  <Button variant="outline" size="icon">
-                    <Twitter className="h-4 w-4" />
-                    <span className="sr-only">X</span>
-                  </Button>
-                </Link>
-                <Link href="mailto:timblazic.dev@gmail.com">
-                  <Button variant="outline" size="icon">
-                    <Mail className="h-4 w-4" />
-                    <span className="sr-only">Email</span>
-                  </Button>
-                </Link>
-              </div>
+          <div className="flex flex-col items-center justify-center space-y-6 text-center">
+            <div className="space-y-3 animate-fade-in [animation-delay:200ms]">
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none animate-slide-up">
+                🚀 High-Performance Web Solutions for{" "}
+                <span className="text-primary">Startups & Agencies</span>
+              </h1>
+              <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400 animate-slide-up [animation-delay:400ms]">
+                Fast, SEO-Optimized, and Designed for Conversions. I transform
+                complex problems into elegant, efficient solutions.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 mt-4 animate-fade-in [animation-delay:600ms]">
+              <Button className="px-8" asChild>
+                <Link href="#contact">Get a Free Website Audit</Link>
+              </Button>
+              <Button variant="outline" asChild>
+                <Link href="#projects">See My Work</Link>
+              </Button>
+            </div>
+            <div className="space-x-4 mt-6">
+              <Link
+                href="https://github.com/TimBlazic?tab=overview"
+                target="_blank"
+              >
+                <Button variant="outline" size="icon">
+                  <Github className="h-4 w-4" />
+                  <span className="sr-only">GitHub</span>
+                </Button>
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/tim-bla%C5%BEi%C4%8D-9b6b97257/"
+                target="_blank"
+              >
+                <Button variant="outline" size="icon">
+                  <Linkedin className="h-4 w-4" />
+                  <span className="sr-only">LinkedIn</span>
+                </Button>
+              </Link>
+              <Link href="https://x.com/timblazic_dev" target="_blank">
+                <Button variant="outline" size="icon">
+                  <Twitter className="h-4 w-4" />
+                  <span className="sr-only">Twitter</span>
+                </Button>
+              </Link>
+              <Link href="mailto:timblazic.dev@gmail.com">
+                <Button variant="outline" size="icon">
+                  <Mail className="h-4 w-4" />
+                  <span className="sr-only">Email</span>
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
 
-        <ProjectsSection />
+        <section className="py-12 bg-muted/30 -mx-4 px-4 md:px-6 rounded-2xl">
+          <div className="text-center mb-10 animate-fade-in [animation-delay:200ms]">
+            <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">
+              Proven Results
+            </h2>
+            <p className="text-muted-foreground mt-2">
+              Measurable improvements for every client project
+            </p>
+          </div>
+          <div className="animate-slide-up [animation-delay:400ms]">
+            <ResultsMetrics />
+          </div>
+        </section>
+
+        <section id="projects" className="py-12 md:py-24 lg:py-32">
+          <div className="text-center mb-12 animate-fade-in">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">
+              Website Transformations
+            </h2>
+            <p className="text-muted-foreground max-w-[700px] mx-auto">
+              See how I&apos;ve helped businesses improve their online presence
+              with performance-focused redesigns.
+            </p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2">
+            <ProjectComparison
+              title="DM Metal"
+              description="Complete redesign of a metal fabrication company's website, focusing on improved user experience and service presentation."
+              beforeImage={
+                projects[0].before || "/placeholder.svg?height=400&width=600"
+              }
+              afterImage={
+                projects[0].after || "/placeholder.svg?height=400&width=600"
+              }
+              improvements={[
+                "Modernized design with improved visual hierarchy and branding",
+                "Optimized for mobile devices to reach more potential clients",
+                "Added comprehensive project gallery to showcase work",
+                "Implemented easy contact forms for better lead generation",
+              ]}
+            />
+            <ProjectComparison
+              title="Kobal"
+              description="Modern website redesign for a construction company, focusing on showcasing their projects and services in a more professional way."
+              beforeImage={
+                projects[1].before || "/placeholder.svg?height=400&width=600"
+              }
+              afterImage={
+                projects[1].after || "/placeholder.svg?height=400&width=600"
+              }
+              improvements={[
+                "Created modern, professional presentation of services",
+                "Enhanced project gallery to better showcase their work",
+                "Improved user experience and navigation structure",
+                "Added clear calls-to-action to increase engagement",
+              ]}
+            />
+          </div>
+
+          <div className="mt-16">
+            <h3 className="text-2xl font-bold tracking-tighter mb-8 text-center">
+              Other Projects
+            </h3>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {publicProjects.map((project, index) => (
+                <div
+                  key={project.id}
+                  className={`animate-slide-up [animation-delay:${
+                    index * 200
+                  }ms]`}
+                >
+                  <ProjectCard
+                    title={project.title}
+                    description={project.description}
+                    image={project.images[0]}
+                    tags={project.tags}
+                    link={`/projects/${project.id}`}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         <section className="py-12 md:py-24 lg:py-32">
-          <div className="mx-auto max-w-6xl px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center">
-              Tech Stack
-            </h2>
-            <TechStack />
-          </div>
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center">
+            Tech Stack
+          </h2>
+          <TechStack />
         </section>
 
         <section
           id="contact"
-          className="py-12 mb-24 md:py-24 lg:py-32 bg-gray-50"
+          className="py-12 md:py-24 lg:py-32 bg-muted/50 -mx-4 px-4 md:px-6"
         >
-          <div className="mx-auto max-w-3xl px-4 md:px-6 text-center">
+          <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-6">
               Let&apos;s Work Together
             </h2>
@@ -220,10 +259,10 @@ export default function Page() {
         </section>
       </main>
 
-      <footer className="border-t">
-        <div className="container mx-auto max-w-7xl flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6">
+      <footer className="border-t mt-24">
+        <div className="container mx-auto max-w-7xl flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4">
           <p className="text-xs text-gray-500 dark:text-gray-400">
-            © 2025 TimBlazic.dev. All rights reserved.
+            © 2024 TimBlazic.dev. All rights reserved.
           </p>
           <nav className="sm:ml-auto flex gap-4 sm:gap-6">
             <p className="text-xs hover:underline underline-offset-4">

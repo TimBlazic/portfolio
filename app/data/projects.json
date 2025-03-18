@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "DM Metal",
-    "description": "DM Metal is a metal fabrication company's website offering metal processing services, metal structures, and metal fences. The site is optimized for mobile devices and provides an easy way to contact the company.",
+    "description": "DM Metal je večjezična spletna stran podjetja za kovinsko proizvodnjo, ki ponuja storitve obdelave kovin, kovinske konstrukcije in kovinske ograje. Stran je optimizirana za mobilne naprave in omogoča enostaven kontakt s podjetjem v slovenskem, angleškem in nemškem jeziku.",
     "private": false,
     "isLive": true,
     "liveLink": "https://dm-metal.vercel.app",
@@ -17,11 +17,13 @@
       "dm-metal/dmmetal-image6.png",
       "dm-metal/dmmetal-image7.png"
     ],
+    "before": "dm-metal/compare/before.png",
+    "after": "dm-metal/compare/after.png",
     "tags": [
-      "Metal Structures",
-      "Metal Fences",
-      "Metal Processing",
-      "Responsive Design"
+      "Website Redesign",
+      "Responsive Design",
+      "Mobile First",
+      "Multilingual"
     ],
     "stats": {
       "stat1": {
@@ -38,10 +40,81 @@
       }
     },
     "longDescription": [
-      "DM Metal is a specialized company for metal structures and metal processing, offering its services for over 10 years.",
-      "The website was designed to provide potential clients with an easy overview of services and quick communication with the company.",
-      "Special attention was given to mobile optimization, as most clients search for services through mobile devices.",
-      "The site includes a project gallery, contact information, and an inquiry form that enables quick communication with clients."
+      "Developed a modern Next.js application with TypeScript for enhanced type safety and maintainability",
+      "Implemented a responsive design system using Tailwind CSS for optimal mobile-first experience",
+      "Created a custom image gallery with lazy loading and optimized image delivery",
+      "Built a contact form system with real-time validation and error handling",
+      "Integrated Google Maps API for location display and directions",
+      "Set up automated deployment with Vercel for continuous integration",
+      "Implemented full multilingual support for Slovenian, English and German languages using next-intl"
+    ],
+    "technologies": [
+      {
+        "name": "Next.js",
+        "description": "React framework"
+      },
+      {
+        "name": "Tailwind CSS",
+        "description": "Utility-first CSS"
+      },
+      {
+        "name": "TypeScript",
+        "description": "Typed JavaScript"
+      },
+      {
+        "name": "next-intl",
+        "description": "Internationalization"
+      },
+      {
+        "name": "Vercel",
+        "description": "Deployment"
+      },
+      {
+        "name": "React",
+        "description": "UI Library"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Kobal",
+    "description": "A modern website redesign for a construction company, focusing on showcasing their projects and services in a more professional and engaging way.",
+    "private": false,
+    "isLive": true,
+    "liveLink": "https://kobal.vercel.app",
+    "isGithub": false,
+    "githubLink": "",
+    "images": ["kobal/compare/after.png", "kobal/compare/before.png"],
+    "before": "kobal/compare/before.png",
+    "after": "kobal/compare/after.png",
+    "tags": [
+      "Website Redesign",
+      "Construction",
+      "Portfolio",
+      "Services",
+      "Responsive Design"
+    ],
+    "stats": {
+      "stat1": {
+        "value": "20+",
+        "description": "Years of Experience"
+      },
+      "stat2": {
+        "value": "500+",
+        "description": "Completed Projects"
+      },
+      "stat3": {
+        "value": "100%",
+        "description": "Client Satisfaction"
+      }
+    },
+    "longDescription": [
+      "Complete website overhaul for Kobal, transforming their online presence with a modern, professional design",
+      "Implemented a modern Next.js application with TypeScript for enhanced type safety and maintainability",
+      "Created a responsive design using Tailwind CSS that works seamlessly across all devices",
+      "Developed a custom project gallery component with smooth animations and lazy loading",
+      "Integrated a contact form with proper validation and error handling",
+      "Set up automated deployment with Vercel for continuous integration"
     ],
     "technologies": [
       {
@@ -67,7 +140,7 @@
     ]
   },
   {
-    "id": 2,
+    "id": 3,
     "title": "NarediMaturo",
     "description": "NarediMaturo is a web application that helps high school students prepare for their final exams. Digitized past exam papers, interactive exercises, and personalized study plans help students achieve better results.",
     "private": false,
@@ -81,7 +154,13 @@
       "naredimaturo/naredimaturo_image3.png",
       "naredimaturo/naredimaturo_image4.png"
     ],
-    "tags": ["Interactive exercises", "Progress tracking", "AI", "Education"],
+    "tags": [
+      "New Application",
+      "Interactive exercises",
+      "Progress tracking",
+      "AI Integration",
+      "Education Platform"
+    ],
     "stats": {
       "stat1": {
         "value": "1,000+",
@@ -97,10 +176,13 @@
       }
     },
     "longDescription": [
-      "NarediMaturo is a comprehensive platform for final exam preparation, combining digitized past exam papers, interactive exercises, and personalized study plans.",
-      "The application enables students to effectively prepare for their exams using the latest digital tools and learning approaches.",
-      "The platform also offers progress tracking, performance analytics, and AI-powered recommendations for improving results.",
-      "With Stripe payment integration, we provide access to premium content while keeping basic features free for all users."
+      "Architected a full-stack Next.js application with TypeScript and Prisma ORM for robust data management",
+      "Implemented AI-powered features using OpenAI API for personalized study recommendations",
+      "Developed a custom authentication system with Supabase for secure user management",
+      "Created an interactive exercise system with real-time progress tracking",
+      "Integrated Stripe payment system for premium content access",
+      "Built a responsive UI with Tailwind CSS and custom animations",
+      "Set up automated testing and deployment pipeline with GitHub Actions"
     ],
     "technologies": [
       {
@@ -142,7 +224,7 @@
     ]
   },
   {
-    "id": 3,
+    "id": 4,
     "title": "Connected Load Carrier",
     "description": "Connected Load Carrier is a web application that enhances digital supply chains by providing real-time asset tracking, advanced data analysis, and operational efficiency for businesses.",
     "private": true,
@@ -218,7 +300,7 @@
     ]
   },
   {
-    "id": 4,
+    "id": 5,
     "title": "ŠUŠU Bubble Tea & Kofi",
     "description": "ŠUŠU is a modern bubble tea and coffee shop, offering a variety of high-quality bubble tea flavors, coffee, and desserts like cake pops and mochi. Located in Ljubljana, it focuses on delivering a unique beverage experience.",
     "private": true,
@@ -289,7 +371,7 @@
     ]
   },
   {
-    "id": 5,
+    "id": 6,
     "title": "Shovels AI",
     "description": "Shovels.ai is a platform that provides access to comprehensive building permit and contractor data, enabling businesses to identify qualified contractors, understand their work history, and connect with decision-makers.",
     "private": true,
